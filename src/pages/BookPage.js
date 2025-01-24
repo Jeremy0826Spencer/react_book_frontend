@@ -3,14 +3,14 @@ import axios from "axios";
 import MakeBook from "../components/MakeBook";
 import Books from "../components/Books";
 
-axios.defaults.baseURL = "http://localhost:5000";
+axios.defaults.baseURL = "http://localhost:8080";
 
 function BookPage() {
   const [books, setBooks] = useState([]);
 
   const fetchBooks = async () => {
     try {
-      const response = await axios.get("/books");
+      const response = await axios.get("/book-service/books");
       setBooks(response.data);
     } catch (error) {
       console.error("Error fetching books:", error);

@@ -7,7 +7,12 @@ function Books({ books }) {
       <h2>Books List</h2>
       <ul>
         {(books || []).map((book) => (
-          <li key={book.id}>{book.name}</li>
+          <li key={book.id}>
+            <strong>ISBN:</strong> {book.isbn}<br />
+            <strong>Title:</strong> {book.title}<br />
+            <strong>Author:</strong> {book.author}<br />
+            <strong>Genre:</strong> {book.genre}
+          </li>
         ))}
       </ul>
     </div>
